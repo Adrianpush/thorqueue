@@ -32,11 +32,14 @@ thorqueue/
 Prerequisites: Docker and Docker Compose.
 
 ```bash
+# Set up environment
+cp .env.example .env    # then edit .env with your values
+
 # Start Postgres + Keycloak
 docker compose up -d
 
-# Postgres:  localhost:5432 (pmadmin/pmadmin_dev)
-# Keycloak:  localhost:8180 (admin/admin_dev)
+# Postgres:  localhost:5432
+# Keycloak:  localhost:8180
 ```
 
 ## License
