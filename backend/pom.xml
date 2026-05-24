@@ -11,8 +11,8 @@
 	<groupId>com.thorqueue</groupId>
 	<artifactId>backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
+	<name>ThorQueue</name>
+	<description>Project management API with ticket-driven workflows</description>
 	<url/>
 	<licenses>
 		<license/>
