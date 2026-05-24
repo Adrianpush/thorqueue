@@ -1,0 +1,35 @@
+# === IDE ===
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Frontend (React) ===
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# === Backend (Spring Boot) ===
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/*.jar
+backend/*.war
+backend/.env
+
+# === Docker ===
+docker-compose.override.yml
+
+# === Logs ===
+*.log
+logs/
+
+# === Init script (not needed in repo) ===
+init-thorqueue.sh
