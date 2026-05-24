@@ -1,31 +1,29 @@
 version: '3.8'
 
 services:
-  # --- PostgreSQL ---
   postgres:
     image: postgres:16-alpine
     container_name: tq-postgres
     environment:
-      POSTGRES_USER: pmadmin
-      POSTGRES_PASSWORD: pmadmin_dev
-      POSTGRES_DB: thorqueue
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./infrastructure/db/init.sql:/docker-entrypoint-initdb.d/init.sql
 
-  # --- Keycloak ---
   keycloak:
     image: quay.io/keycloak/keycloak:24.0
     container_name: tq-keycloak
     environment:
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin_dev
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
       KC_DB: postgres
       KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
-      KC_DB_USERNAME: pmadmin
-      KC_DB_PASSWORD: pmadmin_dev
+      KC_DB_USERNAME: ${POSTGRES_USER}
+      KC_DB_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "8180:8080"
     command: start-dev

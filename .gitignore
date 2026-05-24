@@ -33,3 +33,6 @@ logs/
 
 # === Init script (not needed in repo) ===
 init-thorqueue.sh
+
+.env
+!.env.example
